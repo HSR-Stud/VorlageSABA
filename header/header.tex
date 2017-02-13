@@ -1,0 +1,330 @@
+\usepackage[T1]{fontenc}	% ä,ü...
+\usepackage[utf8]{inputenc} % utf-8 Unterstützung
+\usepackage[ngerman]{babel} % Silbentrennung und Rechtschreibung Deutsch
+\usepackage[{left=1.5cm,right=1.5cm,top=0cm,bottom=0cm}]{geometry} % Seitenränder Titelblatt
+\usepackage[automark]{scrpage2} % Header und Footer
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Packages
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{acronym} 		   % Für Abkürzungsverzeichnis
+\usepackage{adjustbox} 		   % adjustbox, minipage..
+\usepackage{amsmath}   		   % Allgemeine Matheumgebungen
+\usepackage{amssymb}  		   % Fonts: msam,msbm, eufm & Mathesymbole, Mengen (lädt automatisch amsfonts)
+\usepackage{array} 			   % Extending the array and tabular environment -> m,b,p,..
+\usepackage{caption}  		   % Verändern der Schriftart von Bildunterschriften
+\usepackage{changepage}
+\usepackage{epstopdf}
+\usepackage{expl3}
+\usepackage{float}
+\usepackage{framed, color}
+\usepackage{graphbox}
+\usepackage{graphicx}
+\usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
+\usepackage[none]{hyphenat}
+\usepackage{listings}           % Erlaubt es Programmcode in der gewünschten Sprache zu hinterlegen (C++, Matlab,..)
+\usepackage{longtable}
+\usepackage{marginnote} 		% Für Seitenkommentare \marginnote
+\usepackage{mathabx} 			% Package mit vielen weiteren Mathe Symbolen
+\usepackage{mathtools}
+\usepackage{mparhack}  			% Improved marginpar placement
+\usepackage{multicol} 			% In­ter­mix sin­gle and mul­ti­ple columns
+\usepackage{multirow} 			% Create tabular cells spanning multiple rows
+\usepackage{paralist}
+\usepackage{pdfpages} 
+\usepackage{pxfonts} 			% Mathsymbols
+\usepackage{rotating} 			% Rotation tools, including rotated fullpage floats
+\usepackage[onehalfspacing]{setspace}
+\usepackage{scrhack}        	% Fixes koma-script incompatibilities
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{textcomp} 			% Wird für Copyright-Symbol,Währungen, Musikalische-Symbole benötigt
+\usepackage[most]{tcolorbox}
+\usepackage{trfsigns}
+\usepackage{varwidth}
+\usepackage{wrapfig}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Setup Tikz
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usepackage{struktex}
+\usepackage{schemabloc}
+\usepackage[normalem]{ulem}
+\usetikzlibrary{circuits}
+\usetikzlibrary{arrows}
+\usetikzlibrary{circuits.ee.IEC}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{shapes,arrows}
+
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=newest}
+
+\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=4em]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+\tikzstyle{sum} = [draw, circle, node distance=1em, minimum height=1.5em]
+\tikzset{>=latex}
+\tikzset{%
+	block/.style    = {draw, thick, rectangle, minimum height = 3em,
+		minimum width = 3em},
+	sum/.style      = {draw, circle, node distance = 1.5cm}, % Adder
+	input/.style    = {coordinate}, % Input
+	output/.style   = {coordinate} % Output
+}
+\newcommand\Umbruch[2][3cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Caption Setup
+%%%%%%%%%%%%%%%%%%%%%%%
+\captionsetup[figure]{labelfont={it,bf},textfont={it}}
+\captionsetup[table]{labelfont={it,bf},textfont={it},singlelinecheck=off,justification=centering}
+\captionsetup[lstlisting]{labelfont={it,bf},textfont={it}}
+\captionsetup[subfigure]{labelfont=bf,textfont=normalfont,singlelinecheck=off,justification=centering}
+
+\newenvironment{nscenter}
+{\parskip=-5pt\par\nopagebreak\centering}
+{\parskip=-15pt\par\noindent\ignorespacesafterend}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Header and Footer %%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{scrheadings}
+\renewcommand*{\sectionmarkformat}{}
+\clearscrheadfoot
+\ihead{\includegraphics[width = 3.5cm]{header/hsrlogo}}
+\chead{\headmark}
+%\ohead{\includegraphics[width = 3cm]{header/arendi_logo}}
+\ifoot{\vspace{-0.25cm}\today}
+\cfoot{\vspace{-0.5cm}\small{\Author}}
+\ofoot{\vspace{-0.25cm}\pagemark}
+\setheadsepline{.5pt}
+\setfootsepline{.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Textspacing %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{titlesec}
+\titlespacing{\section}{10pt}{0pt}{0.4em}
+\titlespacing{\subsection}{10pt}{0pt}{0.2em}
+\titlespacing{\subsubsection}{10pt}{0.2em}{0.2em}
+\titlespacing{\paragraph}{10pt}{0.2em}{0.2em}
+
+%%%%%%%%%%%%%%%%%%%%%
+%% Load HSR colors %%
+%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
+\usepackage{header/HSRColors}
+
+%%%%%%%%%%%%%%%%%%
+%% Bibliography %%
+%%%%%%%%%%%%%%%%%%
+\usepackage[backend=biber,style=ieee, defernumbers=true]{biblatex}
+\addbibresource{Literatur.bib}
+
+
+% Abbildungen im Quellenverzeichnis nach Alphabet ordnen, Rest nummerieren
+%\DeclareFieldFormat{labelnumber}{\ifkeyword{abb}{\mknumalph{#1}}{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Itemize and Enumerate spacing %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \topsep: space between first item and preceding paragraph
+% \partopsep: extra space added to \topsep when environment starts a new paragraph
+% \itemsep: space between successive items. 
+\usepackage{enumitem} % Controls Layout of itemize, enumerate, description
+\setlist[itemize]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,after=\vskip0.1\baselineskip}
+\setlist[enumerate]{topsep=0pt,itemsep=-1ex,partopsep=1ex,parsep=1ex,after=\vskip0.1\baselineskip}
+
+%%%%%%%%%%%
+%% Index %%
+%%%%%%%%%%%
+\usepackage{imakeidx}
+\makeindex[intoc,columnseprule]
+\indexsetup{firstpagestyle=plain}    % Show header/footer on index page
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Aligned footnotes %%
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[hang]{footmisc}
+\setlength{\footnotemargin}{1em}
+
+%%%%%%%%%%%%%
+%% Tabular %%
+%%%%%%%%%%%%%
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}} % Tabelleninhalt linksausgerichtet
+\newcolumntype{L}[1]{>{\raggedleft\arraybackslash}p{#1}} % Tabelleninhalt rechtsausgerichtet
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}} %  Tabelleninhalt zentriert
+
+% If \Print=true, then make all links black for nicer print
+\providecommand*{\True}{true}
+\ifx \Print \True
+\hypersetup{hidelinks}
+\fi
+
+\parindent0pt % Zeileneinzug verhindern
+%%%%%%%%%%%%%%%%%%%%%%
+%% Generelle Makros %%
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\matlab}[1]{\footnotesize{(Matlab: \texttt{#1})}\normalsize{}}
+
+% Makro für Tabellenbilder gleich unterhalb der Linie
+\newcommand\tabbild[2][]{%
+	\raisebox{0pt}[\dimexpr\totalheight+\dp\strutbox\relax][\dp\strutbox]{%
+		\includegraphics[#1]{#2}%
+	}%
+}
+
+% Makro für Vorteile und Nachteil mit Plus und Minus
+\newcommand\pro{\item[$+$]}
+\newcommand\con{\item[$-$]}
+
+%%%%%%%%%%
+% Colors %
+%%%%%%%%%%
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{red}{rgb}{1,0,0}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{grey}{rgb}{0.8,0.8,0.8}
+\definecolor{green}{rgb}{0,.8,0.05}
+\definecolor{brown}{rgb}{0.603,0,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygreen}{RGB}{28,172,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mathematical Operators %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sinc}{sinc}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\euler}{e}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\PolyGrad}{PolyGrad}
+\DeclareMathOperator{\gradient}{grad}
+\DeclareMathOperator{\rotation}{rot}
+\DeclareMathOperator{\divergenz}{div}
+\DeclareMathOperator{\imag}{j}
+
+%Grösse Integral anpassen
+\def\Int{\mbox{\Large$\displaystyle\int$\normalsize}}
+\def\Int{\mbox{\Large$\displaystyle\iint$\normalsize}}
+\def\OInt{\mbox{\Large$\displaystyle\oint$\normalsize}}
+
+%Makro für 'd' von Integral- und Differentialgleichungen 
+\newcommand*{\diff}{\mathop{}\!\mathrm{d}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fouriertransform %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\unitlength1cm
+\newcommand{\FT}
+{
+	\begin{picture}(1,0.5)
+	\put(0.2,0.1){\circle{0.14}}\put(0.27,0.1){\line(1,0){0.5}}\put(0.77,0.1){\circle*{0.14}}
+	\end{picture}
+}
+
+
+\newcommand{\IFT}
+{
+	\begin{picture}(1,0.5)
+	\put(0.2,0.1){\circle*{0.14}}\put(0.27,0.1){\line(1,0){0.45}}\put(0.77,0.1){\circle{0.14}}
+	\end{picture}
+}
+
+%%%%%%%%%%%%%%%
+% Code Layout %
+%https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+%%%%%%%%%%%%%%%
+
+\lstset{ %
+	firstnumber=1,
+	backgroundcolor=\color{white},   % choose the background color; you must add        \usepackage{color} or \usepackage{xcolor}
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	otherkeywords={...},             % if you want to add more keywords to the set
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,	                 % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=C++,                    % the language of the code   
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},     % string literal style
+	tabsize=2,	                     % sets default tabsize to 2 spaces
+	%title=\lstname                   % show the filename of files included with         \lstinputlisting; also try caption instead of title
+}
+
+\lstdefinestyle{customc++}{
+	belowcaptionskip=1\baselineskip,
+	%frame=L,
+	xleftmargin=\parindent,
+	language=C++,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{blue},
+	commentstyle=\itshape\color{mygreen},
+	identifierstyle=\color{black},
+	stringstyle=\color{gray},
+}
+
+\lstset{ %
+	texcl=true,
+	firstnumber=1,
+	backgroundcolor=\color{white},   % choose the background color; you must add  \usepackage{color} or \usepackage{xcolor}
+	basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+	breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+	breaklines=true,                 % sets automatic line breaking
+	captionpos=b,                    % sets the caption-position to bottom
+	commentstyle=\color{mygreen},    % comment style
+	deletekeywords={...},            % if you want to delete keywords from the given language
+	otherkeywords={...},             % if you want to add more keywords to the set
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	frame=single,	                 % adds a frame around the code
+	keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\color{blue},       % keyword style
+	language=Matlab,                    % the language of the code   
+	numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,                   % how far the line-numbers are from the code
+	numberstyle=\tiny\color{black}, % the style that is used for the line-numbers
+	rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,          % underline spaces within strings only
+	showtabs=false,                  % show tabs within strings adding particular underscores
+	stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mylilas},     % string literal style
+	tabsize=2,	                     % sets default tabsize to 2 spaces
+	%title=\lstname                   % show the filename of files included with         \lstinputlisting; also try caption instead of title
+}
+
+\lstdefinestyle{custommatlab}{
+	belowcaptionskip=1\baselineskip,
+	%frame=L,
+	xleftmargin=\parindent,
+	language=Matlab,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{blue},
+	commentstyle=\itshape\color{mygreen},
+	identifierstyle=\color{black},
+	stringstyle=\color{mylilas},
+}

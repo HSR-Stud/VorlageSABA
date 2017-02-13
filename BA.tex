@@ -1,0 +1,83 @@
+% Dokumentinformationen
+% !TeX program = pdflatex
+% !TeX encoding = utf8
+% !TeX spellcheck = de_DE
+
+\documentclass[
+11pt,
+final,
+oneside,
+a4paper]{article}
+%%%%
+% Document information
+\newcommand*{\Title}            {Hier kommt der\\ Titel der Arbeit hin}
+\newcommand*{\TitleInfo}        {Bachelorarbeit FS 2017}
+\newcommand*{\Author}			{Hans Muster}
+\newcommand*{\Prof}				{Name des Dozenten}
+\newcommand*{\Modul}			{Name des Moduls}
+\newcommand*{\Betreuer}			{Name des Betreuers}
+\newcommand*{\Place}            {Ort}
+\newcommand*{\Print}            {true} % true for black links (print version), false for color links (pdf version)
+
+% Header
+\include{header/header}
+\setcounter{secnumdepth}{4}
+
+% tcolorbox setup
+\tcbset{width=(\linewidth-1mm)/2,before=,after=\hfill,arc=0mm,
+	colframe=red!50!black,colback=white,colback = red!10}
+
+% custom section
+\definecolor{gray80}{gray}{0.8}
+\definecolor{gray60}{gray}{0.6}
+\definecolor{gray40}{gray}{0.4}
+\definecolor{gray20}{gray}{0.2}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\section}[hang]{\Huge\bfseries}{\thesection\hsp\textcolor{gray80}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\subsection}[hang]{\huge\bfseries}{\thesubsection\hsp\textcolor{gray60}{|}\hsp}{0pt}{\Large\bfseries}
+\titleformat{\subsubsection}[hang]{\Large\bfseries}{\thesubsubsection\hsp\textcolor{gray40}{|}\hsp}{0pt}{\large\bfseries}
+\titleformat{\paragraph}[hang]{\large\bfseries}{\theparagraph\hsp\textcolor{gray20}{|}\hsp}{0pt}{\large\bfseries}
+
+% fontstyle
+%\renewcommand\familydefault{\sfdefault}    % Arial
+
+% Document
+\begin{document}
+\thispagestyle{empty}
+\input{sections/titlepage}
+\clearpage
+\pagebreak
+\thispagestyle{empty}
+\hfill
+\pagebreak
+\newgeometry{left=4cm,right=2cm,top=2cm,bottom=1cm,headsep=1.5cm, marginparwidth=20mm,marginparsep=2mm,reversemarginpar,includeheadfoot}
+\thispagestyle{empty}
+\input{sections/Abstract}
+\clearpage
+\pagebreak
+\automark[section]{section}
+\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=20mm,marginparsep=2mm,reversemarginpar,includeheadfoot} %Seitenränder Dokument ohne Titelblatt und Abstract
+\begin{spacing}{1}
+	\setcounter{tocdepth}{4}
+	\tableofcontents
+\end{spacing}
+\pagebreak
+\input{sections/Aufgabenstellung}
+\pagebreak
+\input{sections/Einleitung}
+\pagebreak
+\input{sections/Pflichtenheft}
+\pagebreak
+\input{sections/Projektplan}
+\pagebreak
+\input{sections/Hauptstudie}
+\pagebreak
+\input{sections/Fazit}
+\pagebreak
+\input{sections/Eigenstaendigkeitserklaerung}
+\pagebreak
+\input{sections/Verzeichnisse}
+\pagebreak
+\input{sections/Anhang}
+\pagebreak
+\end{document}
