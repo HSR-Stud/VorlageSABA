@@ -2,11 +2,12 @@
 \usepackage[utf8]{inputenc} % utf-8 Unterstützung
 \usepackage[ngerman]{babel} % Silbentrennung und Rechtschreibung Deutsch
 \usepackage[{left=1.5cm,right=1.5cm,top=0cm,bottom=0cm}]{geometry} % Seitenränder Titelblatt
-\usepackage[automark]{scrpage2} % Header und Footer
+
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Packages
 %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[page,header]{appendix}
 \usepackage{acronym} 		   % Für Abkürzungsverzeichnis
 \usepackage{adjustbox} 		   % adjustbox, minipage..
 \usepackage{amsmath}   		   % Allgemeine Matheumgebungen
@@ -18,12 +19,19 @@
 \usepackage{expl3}
 \usepackage{float}
 \usepackage{framed, color}
+\usepackage{fancyhdr}			%Für Kopf & Fusszeile
 \usepackage{graphbox}
 \usepackage{graphicx}
-\usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
-\usepackage[none]{hyphenat}
+\usepackage{titletoc}			% Editieren des TOCs muss vor hyperref geladen werden
+\usepackage{tocloft}			% Editieren des TOCs muss vor hyperref geladen werden
+%\usepackage[colorlinks, linkcolor = black, citecolor = black, filecolor = black, urlcolor = blue]{hyperref}
+\usepackage{hyperref}
+\usepackage{hyphenat}			%Wortumbruch
+\hyphenation{he-lio-trope opos-sum}
+
 \usepackage{listings}           % Erlaubt es Programmcode in der gewünschten Sprache zu hinterlegen (C++, Matlab,..)
 \usepackage{longtable}
+\usepackage{lastpage}			%Lastpage ref for Footer
 \usepackage{marginnote} 		% Für Seitenkommentare \marginnote
 \usepackage{mathabx} 			% Package mit vielen weiteren Mathe Symbolen
 \usepackage{mathtools}
@@ -39,6 +47,7 @@
 \usepackage{subcaption}
 \usepackage{tabularx}
 \usepackage{textcomp} 			% Wird für Copyright-Symbol,Währungen, Musikalische-Symbole benötigt
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
 \usepackage[most]{tcolorbox}
 \usepackage{trfsigns}
 \usepackage{varwidth}
@@ -92,26 +101,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 %% Header and Footer %%
 %%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{scrheadings}
-\renewcommand*{\sectionmarkformat}{}
-\clearscrheadfoot
-\ihead{\includegraphics[width = 3.5cm]{header/hsrlogo}}
-\chead{\headmark}
-%\ohead{\includegraphics[width = 3cm]{header/arendi_logo}}
-\ifoot{\vspace{-0.25cm}\today}
-\cfoot{\vspace{-0.5cm}\small{\Author}}
-\ofoot{\vspace{-0.25cm}\pagemark}
-\setheadsepline{.5pt}
-\setfootsepline{.5pt}
+\pagestyle{fancy} %eigener Seitenstil
+\fancypagestyle{plain}{
+	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+	\fancyhead[L]{\includegraphics[width = 3.5cm]{header/hsrlogo}} %Kopfzeile links
+	\fancyhead[C]{\textsl{\rightmark}} %zentrierte Kopfzeile
+	%\fancyhead[R]{\includegraphics[width = 2.5cm]{header/axpologo}\vspace*{-0.25cm}} %Kopfzeile rechts
+	\fancyhead[R]{ } %Kopfzeile
+	\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+	
+	\fancyfoot[L]{\today}
+	\fancyfoot[C]{\small{\Author}}
+	\fancyfoot[R]{Seite \thepage\ / \pageref{LastPage}}
+	\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+}\pagestyle{plain}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Textspacing %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{titlesec}
-\titlespacing{\section}{10pt}{0pt}{0.4em}
-\titlespacing{\subsection}{10pt}{0pt}{0.2em}
-\titlespacing{\subsubsection}{10pt}{0.2em}{0.2em}
-\titlespacing{\paragraph}{10pt}{0.2em}{0.2em}
+\titlespacing{\section}{-\marginparwidth}{0pt}{0.2em}
+\titlespacing{\subsection}{-\marginparwidth+10pt}{0pt}{0.2em}
+\titlespacing{\subsubsection}{-\marginparwidth+14pt}{0.2em}{0.2em}
+\titlespacing{\paragraph}{-\marginparwidth+18pt}{0.2em}{0.2em}
 
 %%%%%%%%%%%%%%%%%%%%%
 %% Load HSR colors %%
@@ -122,12 +134,36 @@
 %%%%%%%%%%%%%%%%%%
 %% Bibliography %%
 %%%%%%%%%%%%%%%%%%
-\usepackage[backend=biber,style=ieee, defernumbers=true]{biblatex}
-\addbibresource{Literatur.bib}
+%\usepackage[fixlanguage]{babelbib}
+%\selectbiblanguage{german}
+\usepackage[backend=bibtex,style=ieee, defernumbers=true]{biblatex} %Do not use biber with TexWorks
+\addbibresource{Literatur}
 
+
+%Rewritte Referenze Style and TOF,TOT
+\renewcommand{\thefigure}{Abb. \arabic{figure}}
+\renewcommand{\thetable}{Tab. \arabic{table}}
+\renewcommand{\theequation}{Formel \arabic{equation}}
+
+\addto{\captionsngerman}{%
+	%	\renewcommand*{\contentsname}{Inhalt}
+	%	\renewcommand*{\listfigurename}{Abbildungen}
+	%	\renewcommand*{\listtablename}{Tabellen}
+	\renewcommand*{\figurename}{} %Delet Figure name 
+	\renewcommand*{\tablename}{}
+}
+\setlength{\cftfignumwidth}{2cm}	% Width of equation number in List of Figure
+\setlength{\cfttabnumwidth}{2cm}	% Width of equation number in List of Table
 
 % Abbildungen im Quellenverzeichnis nach Alphabet ordnen, Rest nummerieren
 %\DeclareFieldFormat{labelnumber}{\ifkeyword{abb}{\mknumalph{#1}}{#1}}
+
+%List of Equations
+\newcommand{\listequationsname}{Gleichungen}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{% 
+	\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2cm}% Width of equation number in List of Equations
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Itemize and Enumerate spacing %%
@@ -145,6 +181,12 @@
 \usepackage{imakeidx}
 \makeindex[intoc,columnseprule]
 \indexsetup{firstpagestyle=plain}    % Show header/footer on index page
+
+%-------------------------------------------------
+% Marginalien/Seitenränder
+%-------------------------------------------------
+%\marginpar{Eine Randnotiz}
+\newcommand{\marg}[1]{\marginpar{\raggedright \textbf{#1} }}	
 
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Aligned footnotes %%
