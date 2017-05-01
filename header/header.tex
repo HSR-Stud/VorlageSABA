@@ -102,6 +102,8 @@
 %% Header and Footer %%
 %%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy} %eigener Seitenstil
+\renewcommand{\sectionmark}[1]{\markright{#1}} %entfernt nummer vor section
+\renewcommand{\subsectionmark}[1]{}
 \fancypagestyle{plain}{
 	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 	\fancyhead[L]{\includegraphics[width = 3.5cm]{header/hsrlogo}} %Kopfzeile links
