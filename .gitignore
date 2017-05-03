@@ -46,3 +46,7 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 
 *.rej
+*-blx.bib
+*.ptc
+*.tdo
+*.equ

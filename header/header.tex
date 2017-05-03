@@ -108,15 +108,29 @@
 	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 	\fancyhead[L]{\includegraphics[width = 3.5cm]{header/hsrlogo}} %Kopfzeile links
 	\fancyhead[C]{\textsl{\rightmark}} %zentrierte Kopfzeile
-	%\fancyhead[R]{\includegraphics[width = 2.5cm]{header/axpologo}\vspace*{-0.25cm}} %Kopfzeile rechts
-	\fancyhead[R]{ } %Kopfzeile
+	\fancyhead[R]{ } %Kopfzeile rechts
 	\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 	
 	\fancyfoot[L]{\today}
 	\fancyfoot[C]{\small{\Author}}
 	\fancyfoot[R]{Seite \thepage\ / \pageref{LastPage}}
 	\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
-}\pagestyle{plain}
+}
+
+\fancypagestyle{appendix}{
+    \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+    \fancyhead[L]{} %Kopfzeile links
+    \fancyhead[C]{} %zentrierte Kopfzeile
+    \fancyhead[R]{} %Kopfzeile rechts
+    \renewcommand{\headrulewidth}{0pt} %obere Trennlinie
+    
+    \fancyfoot[L]{}
+    \fancyfoot[C]{}
+    \fancyfoot[R]{Seite \thepage\ / \pageref{LastPage}}
+    \renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+}
+
+\pagestyle{plain} %Pagesytle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Textspacing %%
