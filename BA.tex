@@ -61,7 +61,7 @@ a4paper]{article}
 \newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,reversemarginpar,includeheadfoot} %Seitenränder Dokument ohne Titelblatt und Abstract
 	\begin{spacing}{1}
 		\startcontents[sections]
-		\printcontents[sections]{l}{1}{\setcounter{tocdepth}{4},\section*{Inhaltsverzeichnis}}	
+		\printcontents[sections]{l}{1}{\setcounter{tocdepth}{4}\section*{Inhaltsverzeichnis}}	
 	\end{spacing}
 	\clearpage
 	\pagebreak
@@ -88,7 +88,7 @@ a4paper]{article}
 	\input{sections/Verzeichnisse}
 	\clearpage
 	\pagebreak
-	\pagestyle{empty}
+	\pagestyle{appendix}
 	\input{sections/Anhang}
 	\pagebreak
 \end{document}
