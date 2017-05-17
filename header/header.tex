@@ -41,6 +41,7 @@
 \usepackage{paralist}
 \usepackage{pdfpages} 
 \usepackage{pxfonts} 			% Mathsymbols
+\usepackage[section]{placeins}  % Float-Barrier for Section
 \usepackage{rotating} 			% Rotation tools, including rotated fullpage floats
 \usepackage[onehalfspacing]{setspace}
 \usepackage{scrhack}        	% Fixes koma-script incompatibilities
@@ -239,6 +240,16 @@
 % Makro für Vorteile und Nachteil mit Plus und Minus
 \newcommand\pro{\item[$+$]}
 \newcommand\con{\item[$-$]}
+
+
+%Float-Barrier for Subsection
+\makeatletter
+\AtBeginDocument{%
+	\expandafter\renewcommand\expandafter\subsection\expandafter{%
+		\expandafter\@fb@secFB\subsection
+	}%
+}
+\makeatother
 
 %%%%%%%%%%
 % Colors %
