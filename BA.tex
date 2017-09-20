@@ -6,7 +6,7 @@
 \documentclass[
 11pt,
 final,
-oneside,
+twoside,
 a4paper]{article}
 %%%%
 % Document information
@@ -50,30 +50,36 @@ a4paper]{article}
 	\pagebreak
 	\thispagestyle{empty}
 	\listoftodos
+    \clearpage
 	\pagebreak
 	
-\newgeometry{left=4cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,reversemarginpar,includeheadfoot}
+\newgeometry{left=2cm,right=4cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,includeheadfoot}
 	\thispagestyle{empty}
 	\input{sections/Abstract}
 	\clearpage
 	\pagebreak
 
-\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,reversemarginpar,includeheadfoot} %Seitenränder Dokument ohne Titelblatt und Abstract
+\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,includeheadfoot} %Seitenränder Dokument ohne Titelblatt und Abstract
 	\begin{spacing}{1}
 		\startcontents[sections]
 		\printcontents[sections]{l}{1}{\setcounter{tocdepth}{4}\section*{Inhaltsverzeichnis}}	
 	\end{spacing}
-	\clearpage
-	\pagebreak
+	\cleardoublepage 
+	
 
 
-\newgeometry{left=4cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,reversemarginpar,includeheadfoot}
+\newgeometry{left=2cm,right=4cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,includeheadfoot}
 	\pagebreak
 	\input{sections/Aufgabenstellung}
+    \cleardoublepage
 	\pagebreak
 	\input{sections/Einleitung}
 	\pagebreak
+    \input{sections/Einleitung}
+    \pagebreak
 	\input{sections/Pflichtenheft}
+    \pagebreak
+    \input{sections/Pflichtenheft}
 	\pagebreak
 	\input{sections/Projektplan}
 	\pagebreak
@@ -82,7 +88,7 @@ a4paper]{article}
 	\input{sections/Fazit}
 	\pagebreak
 
-\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,reversemarginpar,includeheadfoot}	
+\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,includeheadfoot}	
 	\input{sections/Eigenstaendigkeitserklaerung}
 	\pagebreak
 	\input{sections/Verzeichnisse}
