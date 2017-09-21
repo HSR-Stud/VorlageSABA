@@ -105,7 +105,12 @@
 \pagestyle{fancy} %eigener Seitenstil
 \renewcommand{\sectionmark}[1]{\markright{#1}} %entfernt nummer vor section
 \renewcommand{\subsectionmark}[1]{}
+%twopage
 %\ifthenelse{\isodd{\value{page}}}{\leftmark}{\rightmark}
+% or with
+%\fancyhead[OR]{} % "O" for "odd"
+%\fancyhead[ER]{} % "E" for "even"
+
 \fancypagestyle{plain}{
 	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 	\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\includegraphics[width = 3.5cm]{header/hsrlogo}}{}} %Kopfzeile links
