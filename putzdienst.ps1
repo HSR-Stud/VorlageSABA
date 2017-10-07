@@ -62,6 +62,6 @@ get-childitem *.tdo |% {remove-item $_}
 
 get-childitem *.xml |% {remove-item $_}
 
-get-childitem SA-blx.bib |% {remove-item $_}
+get-childitem BA-blx.bib |% {remove-item $_}
 
 exit

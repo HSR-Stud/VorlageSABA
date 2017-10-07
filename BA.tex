@@ -9,10 +9,13 @@ final,
 twoside,
 a4paper]{article}
 %%%%
+
 % Document information
-\newcommand*{\Title}            {Hier kommt der\\ Titel der Arbeit hin}
+\newcommand*{\Title}            {Hier k\"ommt der\\ Titel der Arbeit}
 \newcommand*{\TitleInfo}        {Bachelorarbeit FS 2017}
-\newcommand*{\Author}			{Hans Muster}
+\newcommand*{\AuthorOne}		{Hans Muster1}
+\newcommand*{\AuthorTwo}		{Hans Muster2}
+\newcommand*{\Author}			{\AuthorOne, \AuthorTwo}
 \newcommand*{\Prof}				{Name des Dozenten}
 \newcommand*{\Modul}			{Name des Moduls}
 \newcommand*{\Betreuer}			{Name des Betreuers}
@@ -21,6 +24,7 @@ a4paper]{article}
 
 % Header
 \include{header/header}
+\include{header/codelayout}
 \setcounter{secnumdepth}{4}
 
 \usepackage{lipsum} %for example
@@ -28,11 +32,6 @@ a4paper]{article}
 \tcbset{width=(\linewidth-1mm)/2,before=,after=\hfill,arc=0mm,
 	colframe=red!50!black,colback=white,colback = red!10}
 
-% custom section
-\definecolor{gray80}{gray}{0.8}
-\definecolor{gray60}{gray}{0.6}
-\definecolor{gray40}{gray}{0.4}
-\definecolor{gray20}{gray}{0.2}
 \newcommand{\hsp}{\hspace{20pt}}
 \titleformat{\section}[hang]{\Huge\bfseries}{\thesection\hsp\textcolor{gray80}{|}\hsp}{0pt}{\Huge\bfseries}
 \titleformat{\subsection}[hang]{\huge\bfseries}{\thesubsection\hsp\textcolor{gray60}{|}\hsp}{0pt}{\Large\bfseries}
