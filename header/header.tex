@@ -69,35 +69,35 @@ pdfproducer={Latex with hyperref},
 %%%%%%%%%%%%%%%%%%%%%%%
 %% Setup Tikz
 %%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{tikz}
-\usepackage{struktex}
-\usepackage{schemabloc}
-\usepackage[normalem]{ulem}
-\usetikzlibrary{circuits}
-\usetikzlibrary{arrows}
-\usetikzlibrary{circuits.ee.IEC}
-\usetikzlibrary{patterns}
-\usetikzlibrary{positioning}
-\usetikzlibrary{shapes,arrows}
-
-\usepackage{pgfplots}
-\usepackage{pgfplotstable}
-\pgfplotsset{compat=newest}
-
-\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=4em]
-\tikzstyle{input} = [coordinate]
-\tikzstyle{output} = [coordinate]
-\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
-\tikzstyle{sum} = [draw, circle, node distance=1em, minimum height=1.5em]
-\tikzset{>=latex}
-\tikzset{%
-	block/.style    = {draw, thick, rectangle, minimum height = 3em,
-		minimum width = 3em},
-	sum/.style      = {draw, circle, node distance = 1.5cm}, % Adder
-	input/.style    = {coordinate}, % Input
-	output/.style   = {coordinate} % Output
-}
-\newcommand\Umbruch[2][3cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
+%\usepackage{tikz}
+%\usepackage{struktex}
+%\usepackage{schemabloc}
+%\usepackage[normalem]{ulem}
+%\usetikzlibrary{circuits}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{circuits.ee.IEC}
+%\usetikzlibrary{patterns}
+%\usetikzlibrary{positioning}
+%\usetikzlibrary{shapes,arrows}
+%
+%\usepackage{pgfplots}
+%\usepackage{pgfplotstable}
+%\pgfplotsset{compat=newest}
+%
+%\tikzstyle{block} = [draw, rectangle, minimum height=3em, minimum width=4em]
+%\tikzstyle{input} = [coordinate]
+%\tikzstyle{output} = [coordinate]
+%\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+%\tikzstyle{sum} = [draw, circle, node distance=1em, minimum height=1.5em]
+%\tikzset{>=latex}
+%\tikzset{%
+%	block/.style    = {draw, thick, rectangle, minimum height = 3em,
+%		minimum width = 3em},
+%	sum/.style      = {draw, circle, node distance = 1.5cm}, % Adder
+%	input/.style    = {coordinate}, % Input
+%	output/.style   = {coordinate} % Output
+%}
+%\newcommand\Umbruch[2][3cm]{\begin{varwidth}{#1}\centering#2\end{varwidth}}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Caption Setup
@@ -149,9 +149,9 @@ pdfproducer={Latex with hyperref},
 \fancypagestyle{plain}{
 	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 	\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\includegraphics[height = 1cm]{header/hsrlogo}}
-								{--logo-firma--}} %Kopfzeile links
+								{\includegraphics[height = 1cm]{images/HSR}}} %Kopfzeile links
 	\fancyhead[C]{\textsl{\rightmark}} %zentrierte Kopfzeile
-	\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{--logo-firma--}
+	\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\includegraphics[height = 1cm]{images/HSR}}
 								{\includegraphics[height = 1cm]{header/hsrlogo}}} %Kopfzeile rechts
 	\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 	
