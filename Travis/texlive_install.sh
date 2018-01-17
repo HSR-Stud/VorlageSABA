@@ -106,6 +106,7 @@ tlmgr install  	\
   latex-fonts   \
   listings      \
   listofitems   \
+  lipsum		\
   lm            \
   longtable     \
   logreq		\
