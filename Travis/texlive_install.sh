@@ -95,6 +95,7 @@ tlmgr install   \
   fontenc       \
   graphbox		\
   graphicx      \
+  hyphenat      \
   hyperref      \
   jknapltx      \
   lastpage      \
@@ -107,22 +108,27 @@ tlmgr install   \
   longtable     \
   l3kernel	    \
   marvosym      \
+  marginnote	\	
+  mparhack		\
   mathabx       \
   mathrsfs      \
   mathtools     \
   multicol      \
   multirow      \
   opensans      \
+  paralist		\
   pdfpages      \
   pdflscape     \
   pgf           \
   pgfplots      \
   polynom       \
   pxfonts       \
+  placeins		\
   rotating      \
   rsfs          \
   subcaption    \
   scalerel      \
+  setspace		\
   slantsc       \
   stackengine   \
   stmaryrd      \
