@@ -39,11 +39,6 @@ tlmgr install graphics
 tlmgr install required
 tlmgr install collection-fontsrecommended
 
-#sudo apt-get install texlive-fonts-recommended
-#sudo apt-get install texlive-latex-extra
-#sudo apt-get install exlive-fonts-extra 
-#sudo apt-get install dvipng
-#sudo apt-ge install install texlive-latex-recommended
 
 # Install babel languages
 #tlmgr install collection-langeuropean
