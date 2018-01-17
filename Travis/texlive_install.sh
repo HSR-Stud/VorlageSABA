@@ -146,6 +146,7 @@ tlmgr install  	\
   varwidth		\
   wrapfig       \
   xcolor        \
+  xpatch		\
   xstring
 
 
