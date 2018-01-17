@@ -141,6 +141,7 @@ tlmgr install  	\
   tcolorbox		\
   trfsigns      \
   trsym         \
+  trimspaces	\
   txfonts       \
   ulem          \
   verbatim      \
