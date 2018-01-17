@@ -79,6 +79,7 @@ tlmgr install  	\
   changepage	\
   collectbox    \
   courier       \
+  csquotes		\
   ec            \
   enumerate     \
   enumitem      \
