@@ -73,6 +73,7 @@ tlmgr install   \
   bm            \
   bookmark      \
   booktabs      \
+  bigfoot		\
   cancel        \
   caption       \
   centernot     \
