@@ -60,6 +60,7 @@ tlmgr install hyphen-german
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
 # pgf includes tikz
 tlmgr install   \
+  appendix      \
   adjustbox     \
   algorithmicx  \
   algorithms    \
