@@ -60,92 +60,93 @@ tlmgr install hyphen-german
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
 # pgf includes tikz
 tlmgr install   \
-  appendix      \
-  adjustbox     \
-  algorithmicx  \
-  algorithms    \
-  amsfonts      \
-  amsmath       \
-  amssymb       \
   acronym		\
-  array         \
-  amsthm        \
-  bm            \
-  bookmark      \
-  booktabs      \
-  bigfoot		\
+  adjustbox     \		
+  algorithmicx  \		
+  algorithms    \		
+  amsfonts      \		
+  amsmath       \		
+  amssymb       \		
+  amsthm        \		
+  appendix      \		
+  array         \		
   bibtex		\
-  cancel        \
-  caption       \
-  centernot     \
-  courier       \
-  collectbox    \
-  changepage	\
-  ec            \
-  enumerate     \
-  enumitem      \
-  etoolbox      \
+  bigfoot		\
+  bm            \		
+  bookmark      \		
+  booktabs      \		
+  cancel        \		
+  caption       \		
+  centernot     \		
+  changepage	\	
+  collectbox    \		
+  courier       \		
+  ec            \		
+  enumerate     \		
+  enumitem      \		
   epstopdf		\
-  exam          \
-  fancybox      \
-  fancyhdr      \
-  float         \
-  floatflt      \
+  etoolbox      \		
+  exam          \		
+  fancybox      \		
+  fancyhdr      \		
+  float         \		
+  floatflt      \		
+  fontenc       \		
   framed		\
-  fontenc       \
   graphbox		\
-  graphicx      \
-  hyphenat      \
-  hyperref      \
-  jknapltx      \
-  lastpage      \
-  imakeidx      \
-  inputenc      \
-  latex-fonts   \
-  lm            \
-  listings      \
-  listofitems   \
-  longtable     \
-  l3kernel	    \
-  marvosym      \
+  graphicx      \		
+  hyperref      \		
+  hyphenat      \		
+  imakeidx      \		
+  inputenc      \		
+  jknapltx      \		
+  l3kernel	    \	
+  lastpage      \		
+  latex-fonts   \		
+  listings      \		
+  listofitems   \		
+  lm            \		
+  longtable     \		
   marginnote	\	
+  marvosym      \		
+  mathabx       \		
+  mathrsfs      \		
+  mathtools     \		
   mparhack		\
-  mathabx       \
-  mathrsfs      \
-  mathtools     \
-  multicol      \
-  multirow      \
-  opensans      \
+  multicol      \		
+  multirow      \		
+  opensans      \		
   paralist		\
-  pdfpages      \
-  pdflscape     \
-  pgf           \
-  pgfplots      \
-  polynom       \
-  pxfonts       \
+  pdflscape     \		
+  pdfpages      \		
+  pgf           \		
+  pgfplots      \		
   placeins		\
-  rotating      \
-  rsfs          \
-  subcaption    \
-  scalerel      \
+  polynom       \		
+  pxfonts       \		
+  rotating      \		
+  rsfs          \		
+  scalerel      \		
   setspace		\
-  slantsc       \
-  stackengine   \
-  stmaryrd      \
-  thmtools      \
-  tabularx      \
-  textcomp      \
-  tikz          \
-  times         \
-  titlesec      \
-  trfsigns      \
-  trsym         \
-  txfonts       \
-  verbatim      \
-  ulem          \
-  wrapfig       \
-  xcolor        \
-  xstring
+  slantsc       \		
+  stackengine   \		
+  stmaryrd      \		
+  subcaption    \		
+  tabularx      \		
+  textcomp      \		
+  thmtools      \		
+  tikz          \				
+  titlesec      \		
+  tocloft		\
+  trfsigns      \		
+  trsym         \		
+  txfonts       \		
+  ulem          \		
+  verbatim      \		
+  wrapfig       \		
+  xcolor        \		
+  xstring		
+
 
 #fmtutil --no-strict --byengine=pdftex
 
