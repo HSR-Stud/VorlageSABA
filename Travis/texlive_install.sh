@@ -91,6 +91,7 @@ tlmgr install  	\
   float         \
   floatflt      \
   fontenc       \
+  footmisc		\
   framed		\
   graphbox		\
   graphicx      \
