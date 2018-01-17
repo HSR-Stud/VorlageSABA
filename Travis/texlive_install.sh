@@ -134,11 +134,14 @@ tlmgr install  	\
   tikz          \
   titlesec      \
   tocloft		\
+  todonotes		\
+  tcolorbox		\
   trfsigns      \
   trsym         \
   txfonts       \
   ulem          \
   verbatim      \
+  varwidth		\
   wrapfig       \
   xcolor        \
   xstring
