@@ -68,6 +68,7 @@ tlmgr install  	\
   array         \
   bibtex		\
   biblatex		\
+  biblatex-ieee	\
   bigfoot		\
   bm            \
   bookmark      \
