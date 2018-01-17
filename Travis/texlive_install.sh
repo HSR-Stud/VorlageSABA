@@ -66,6 +66,7 @@ tlmgr install   \
   amsfonts      \
   amsmath       \
   amssymb       \
+  acronym		\
   array         \
   amsthm        \
   bm            \
@@ -76,10 +77,12 @@ tlmgr install   \
   centernot     \
   courier       \
   collectbox    \
+  changepage	\
   ec            \
   enumerate     \
   enumitem      \
   etoolbox      \
+  epstopdf		\
   exam          \
   fancybox      \
   fancyhdr      \
@@ -97,6 +100,7 @@ tlmgr install   \
   listings      \
   listofitems   \
   longtable     \
+  l3k­er­nel	\
   marvosym      \
   mathabx       \
   mathrsfs      \
