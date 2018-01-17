@@ -67,6 +67,7 @@ tlmgr install  	\
   appendix      \
   array         \
   bibtex		\
+  biblatex		\
   bigfoot		\
   bm            \
   bookmark      \
