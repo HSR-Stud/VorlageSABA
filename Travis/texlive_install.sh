@@ -102,7 +102,7 @@ tlmgr install   \
   listings      \
   listofitems   \
   longtable     \
-  l3k­er­nel	\
+  l3kernel	    \
   marvosym      \
   mathabx       \
   mathrsfs      \
