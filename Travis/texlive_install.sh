@@ -54,8 +54,8 @@ tlmgr install hyphen-german
 # Index of packages: http://ctan.mirrors.hoobly.com/systems/texlive/tlnet/archive/
 # Other contrib packages: done as a block to avoid multiple calls to tlmgr
 # pgf includes tikz
-tlmgr install   \
-  acronym		\
+tlmgr install  acronym
+tlmgr install  	\
   adjustbox     \		
   algorithmicx  \		
   algorithms    \		
