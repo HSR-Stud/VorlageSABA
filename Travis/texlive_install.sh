@@ -135,7 +135,8 @@ tlmgr install   \
   verbatim      \
   ulem          \
   wrapfig       \
-  xcolor        
+  xcolor        \
+  xstring
 
 #fmtutil --no-strict --byengine=pdftex
 
