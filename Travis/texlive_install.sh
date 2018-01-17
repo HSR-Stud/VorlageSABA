@@ -74,6 +74,7 @@ tlmgr install   \
   bookmark      \
   booktabs      \
   bigfoot		\
+  bibtex		\
   cancel        \
   caption       \
   centernot     \
@@ -90,6 +91,7 @@ tlmgr install   \
   fancyhdr      \
   float         \
   floatflt      \
+  framed		\
   fontenc       \
   graphicx      \
   hyperref      \
