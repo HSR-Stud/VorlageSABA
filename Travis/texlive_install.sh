@@ -106,6 +106,7 @@ tlmgr install  	\
   listofitems   \
   lm            \
   longtable     \
+  logreq		\
   marginnote	\
   marvosym      \
   mathabx       \
