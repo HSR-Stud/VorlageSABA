@@ -20,7 +20,6 @@ if ! command -v texlua > /dev/null; then
 
   #sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
   
-  echo "${dir}"
   # Install a minimal system
   ./install-tl --profile=../texlive/texlive.profile
   

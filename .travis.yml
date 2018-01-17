@@ -7,8 +7,8 @@ install:
  - source ./Travis/texlive_install.sh
 cache:
   directories:
-    - /tmp/Travis/texlive
-    - $HOME/Travis/.texlive
+    - /tmp/texlive
+    - $HOME/.texlive
 # Change working directory so including files will work
 before_script:
 - dir
