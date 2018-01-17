@@ -121,6 +121,7 @@ tlmgr install  	\
   pxfonts       \
   rotating      \
   rsfs          \
+  scrhack		\
   scalerel      \
   setspace		\
   slantsc       \
@@ -140,7 +141,7 @@ tlmgr install  	\
   verbatim      \
   wrapfig       \
   xcolor        \
-  xstring		
+  xstring
 
 
 #fmtutil --no-strict --byengine=pdftex
