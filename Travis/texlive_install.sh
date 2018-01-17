@@ -29,6 +29,7 @@ fi
 # Just including texlua so the cache check above works
 # Needed for any use of texlua even if not testing LuaTeX
 tlmgr install luatex
+tlmgr install koma-script
 
 # Needed for TeX Live 2017
 tlmgr install xkeyval
@@ -79,6 +80,7 @@ tlmgr install  	\
   ec            \
   enumerate     \
   enumitem      \
+  environ		\
   epstopdf		\
   etoolbox      \
   exam          \
