@@ -98,6 +98,7 @@ tlmgr install  	\
   inputenc      \
   jknapltx      \
   l3kernel	    \
+  l3packages	\
   lastpage      \
   latex-fonts   \
   listings      \
