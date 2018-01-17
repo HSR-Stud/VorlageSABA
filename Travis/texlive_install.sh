@@ -93,6 +93,7 @@ tlmgr install   \
   floatflt      \
   framed		\
   fontenc       \
+  graphbox		\
   graphicx      \
   hyperref      \
   jknapltx      \
