@@ -46,14 +46,19 @@ a4paper]{article}
 
 % Document
 \begin{document}
-	\thispagestyle{empty}
-	\input{sections/titlepage}
-	\clearpage
-	\pagebreak
-	\thispagestyle{empty}
-	\listoftodos
+        \pagenumbering{Roman}
+    \thispagestyle{empty}
+    \input{sections/titlepage}
     \clearpage
-	\pagebreak
+    \pagebreak
+    \thispagestyle{empty}
+    \listoftodos
+    \cleardoublepage
+    \pagebreak
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    \thispagestyle{empty}
+
 	
 \newgeometry{left=2cm,right=4cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,includeheadfoot}
 	\thispagestyle{empty}
