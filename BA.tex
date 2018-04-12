@@ -23,14 +23,15 @@ a4paper]{article}
 \newcommand*{\Modul}			{Name des Moduls}
 \newcommand*{\Betreuer}			{Name des Betreuers}
 \newcommand*{\Place}            {Ort}
+\newcommand*{\LogoHSR}          {\includegraphics[height = 1cm]{header/hsrlogo}}
+\newcommand*{\LogoCompany}      {\includegraphics[height = 1cm]{header/logo}}
 \newcommand*{\Print}            {false} % true for black links (print version), false for color links (pdf version)
 
 % Header
 \include{header/header}
-\include{header/codelayout}
+%\include{header/codelayout}
 \setcounter{secnumdepth}{4}
 
-\usepackage{lipsum} %for example
 % tcolorbox setup
 \tcbset{width=(\linewidth-1mm)/2,before=,after=\hfill,arc=0mm,
 	colframe=red!50!black,colback=white,colback = red!10}
@@ -103,5 +104,5 @@ a4paper]{article}
 	\pagebreak
 	\pagestyle{appendix}
 	\input{sections/Anhang}
-	\pagebreak
+	\cleardoublepage
 \end{document}

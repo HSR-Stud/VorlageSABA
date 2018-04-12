@@ -32,8 +32,8 @@
 \usepackage{longtable}
 \usepackage{lastpage}			%Lastpage ref for Footer
 \usepackage{marginnote} 		% Für Seitenkommentare \marginnote
+\usepackage{mathtools}          % Vor mathabx laden!
 \usepackage{mathabx} 			% Package mit vielen weiteren Mathe Symbolen
-\usepackage{mathtools}
 \usepackage{mparhack}  			% Improved marginpar placement
 \usepackage{multicol} 			% In­ter­mix sin­gle and mul­ti­ple columns
 \usepackage{multirow} 			% Create tabular cells spanning multiple rows
@@ -147,18 +147,21 @@ pdfproducer={Latex with hyperref},
 %\fancyhead[ER]{} % "E" for "even"
 
 \fancypagestyle{plain}{
-	\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
-	\fancyhead[R]{\ifthenelse{\isodd{\value{page}}}{\includegraphics[height = 1cm]{header/hsrlogo.png}}
-								{\includegraphics[height = 1cm]{images/hsr.jpg}}} %Kopfzeile links
-	\fancyhead[C]{\textsl{\rightmark}} %zentrierte Kopfzeile
-	\fancyhead[L]{\ifthenelse{\isodd{\value{page}}}{\includegraphics[height = 1cm]{images/hsr.jpg}}
-								{\includegraphics[height = 1cm]{header/hsrlogo.png}}} %Kopfzeile rechts
-	\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
-	
-	\fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{Seite \thepage\ / \pageref{LastPage}}{\today}}
-	\fancyfoot[C]{\small{\Author}}
-	\fancyfoot[L]{\ifthenelse{\isodd{\value{page}}}{\today}{Seite \thepage\ / \pageref{LastPage}}}
-	\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+    \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+    
+    \fancyhead[OR]{\LogoHSR}
+    \fancyhead[ER]{\LogoCompany}
+    \fancyhead[C]{\textsl{\rightmark}} %zentrierte Kopfzeile
+    \fancyhead[OL]{\LogoCompany}
+    \fancyhead[EL]{\LogoHSR}
+    \renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+    
+    \fancyfoot[OR]{Seite \thepage\ / \pageref{LastPage}}
+    \fancyfoot[ER]{\today}
+    \fancyfoot[C]{\small{\Author}}
+    \fancyfoot[EL]{Seite \thepage\ / \pageref{LastPage}}
+    \fancyfoot[OL]{\today}
+    \renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
 }
 
 \fancypagestyle{appendix}{
@@ -168,11 +171,14 @@ pdfproducer={Latex with hyperref},
     \fancyhead[L]{} %Kopfzeile rechts
     \renewcommand{\headrulewidth}{0pt} %obere Trennlinie
     
-    \fancyfoot[R]{\ifthenelse{\isodd{\value{page}}}{Seite \thepage\ / \pageref{LastPage}}{}}
+    \fancyfoot[OR]{Seite \thepage\ / \pageref{LastPage}}
+    \fancyfoot[ER]{\today}
     \fancyfoot[C]{}
-    \fancyfoot[L]{\ifthenelse{\isodd{\value{page}}}{}{Seite \thepage\ / \pageref{LastPage}}}
+    \fancyfoot[EL]{Seite \thepage\ / \pageref{LastPage}}
+    \fancyfoot[OL]{\today}
     \renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
 }
+
 
 \pagestyle{plain} %Pagesytle
 

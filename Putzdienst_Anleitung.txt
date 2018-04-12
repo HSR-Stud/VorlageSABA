@@ -1,6 +1,7 @@
 
 #you can set this code as usercommand in texstudio but you will only clear the folder in which the file is located. Or just run it with powershell
-
+#alternativ: 	git clean -dn
+#	 	git clean -d
 
  powershell "& ""C:/pfad/putzdienst.ps1"" "
 
