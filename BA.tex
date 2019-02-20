@@ -32,6 +32,9 @@ a4paper]{article}
 %\include{header/codelayout}
 \setcounter{secnumdepth}{4}
 
+%\includeonly{sections/Einleitung,sections/Einleitung1,sections/Verzeichnisse}
+
+
 % tcolorbox setup
 \tcbset{width=(\linewidth-1mm)/2,before=,after=\hfill,arc=0mm,
 	colframe=red!50!black,colback=white,colback = red!10}
@@ -45,64 +48,46 @@ a4paper]{article}
 % fontstyle
 %\renewcommand\familydefault{\sfdefault}    % Arial
 
-% Document
+% Document=========================================
 \begin{document}
-        \pagenumbering{Roman}
+    \pagenumbering{Roman}
     \thispagestyle{empty}
     \input{sections/titlepage}
-    \clearpage
-    \pagebreak
+    \clearpage \pagebreak
     \thispagestyle{empty}
     \listoftodos
-    \cleardoublepage
-    \pagebreak
+    \cleardoublepage \pagebreak
     \pagenumbering{arabic}
     \setcounter{page}{1}
     \thispagestyle{empty}
 
-	
 \newgeometry{left=2cm,right=4cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,includeheadfoot}
+\savegeometry{margin}
 	\thispagestyle{empty}
-	\input{sections/Abstract}
-	\clearpage
-	\pagebreak
+	\include{sections/Abstract}
 
 \newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,includeheadfoot} %Seitenränder Dokument ohne Titelblatt und Abstract
+\savegeometry{no-margin}
 	\begin{spacing}{1}
 		\startcontents[sections]
 		\printcontents[sections]{l}{1}{\setcounter{tocdepth}{4}\section*{Inhaltsverzeichnis}}	
 	\end{spacing}
 	\cleardoublepage 
 	
-
-
-\newgeometry{left=2cm,right=4cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=30mm,marginparsep=3mm,includeheadfoot}
-	\pagebreak
-	\input{sections/Aufgabenstellung}
-    \cleardoublepage
-	\pagebreak
-	\input{sections/Einleitung}
-	\pagebreak
-    \input{sections/Einleitung}
-    \pagebreak
-	\input{sections/Pflichtenheft}
-    \pagebreak
-    \input{sections/Pflichtenheft}
-	\pagebreak
-	\input{sections/Projektplan}
-	\pagebreak
-	\input{sections/Hauptstudie}
-	\pagebreak
-	\input{sections/Fazit}
-	\pagebreak
-
-\newgeometry{left=2cm,right=2cm,top=1cm,bottom=1cm,headsep=1.5cm, marginparwidth=1mm,marginparsep=3mm,includeheadfoot}	
-	\input{sections/Eigenstaendigkeitserklaerung}
-	\pagebreak
-	\input{sections/Verzeichnisse}
-	\clearpage
-	\pagebreak
+\loadgeometry{margin}
+	\include{sections/Aufgabenstellung}
+%    \cleardoublepage
+	\include{sections/Einleitung}
+    \include{sections/Einleitung1}
+	\include{sections/Pflichtenheft}
+	\include{sections/Projektplan}
+	\include{sections/Hauptstudie}
+	\include{sections/Fazit}
+	
+\loadgeometry{no-margin}
+	\include{sections/Eigenstaendigkeitserklaerung}
+	\include{sections/Verzeichnisse}
 	\pagestyle{appendix}
-	\input{sections/Anhang}
+	\include{sections/Anhang}
 	\cleardoublepage
 \end{document}
