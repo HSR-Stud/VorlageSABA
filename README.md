@@ -1,5 +1,5 @@
 # BA_Vorlage
-Vorlage für die Bachelor-Arbeit
+Vorlage für die Bachelor- bzw. Studien-Arbeit
 
 ## Anleitung Putzdienst
 
