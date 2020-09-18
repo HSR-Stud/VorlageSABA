@@ -1,4 +1,4 @@
-# BA_Vorlage
+# SA/BA_Vorlage
 Vorlage für die Bachelor- bzw. Studien-Arbeit
 
 ## Anleitung Putzdienst
